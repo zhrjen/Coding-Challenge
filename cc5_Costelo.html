@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modified FLAMES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modified FLAMES</h1>
+
+    <button onclick="flames()">Match Names</button>
+    <h3 id="names"></h3>
+
+    <h4>FLAMES Result:</h4>
+    <h3 id="result"></h3>
+
+    <script>
+        function flames() {
+            var name1 = prompt("Please enter the first name:");
+            var name2 = prompt("Please enter the second name:");
+
+            var namesText = "Names: " + name1 + " ♡ " + name2;
+            document.getElementById("names").textContent = namesText;
+
+            var fixedNames = [fixedName(name1), fixedName(name2)];
+            var totalLetters = fixedNames[0].length + fixedNames[1].length;
+
+            var flamesScore = totalLetters % 6;
+
+            var relationship;
+            switch (flamesScore) {
+                case 0:
+                    relationship = "Sadly you are just ... FRIENDS :("; 
+                    break;
+                case 1:
+                    relationship = "Oh my ! You guys are LOVERS !!"; 
+                    break;
+                case 2:
+                    relationship = "hmm you are just ACQUAINTANCES :)"; 
+                    break;
+                case 3:
+                    relationship = "I salute, get ready for MARRIAGE !"; 
+                    break;
+                case 4:
+                    relationship = "Unfortunately you are ENEMIES :/"; 
+                    break;
+                case 5:
+                    relationship = "aww cute SWEETHEARTS ^_^"; 
+                    break;
+            }
+            document.getElementById("result").textContent = relationship;
+        }
+
+        function fixedName(name) {
+            return name.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        }
+    </script>
+		<a href="file:///C:/Users/GER%20COSTELO/Downloads/PSHS%20SRC%20SY%2023-24/COMSCI/Q3/cc_compile.html"> Back </a>
+</body>
+</html>
+

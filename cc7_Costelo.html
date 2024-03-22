@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Time Password</title>
+    <style>
+        body {
+            background: lightblue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: navy;
+        }
+        button {
+            padding: 10px;
+            background: violet;
+            cursor: pointer;
+        }
+        a {
+            font-size: 0.5em;
+            color: maroon;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body onload="randomOTP()">
+    <h1>Final Verification Step</h1>
+    <h2>Current OTP: <span id="otp">_ _ _ _ _ _</span> <a onclick="randomOTP()" href="#">New OTP</a></h2>
+    <button onclick="enterOTP()">Enter the OTP as shown above</button>
+
+    <script>
+        function randomOTP() {
+            var otp = "";
+            for (var i = 0; i < 6; i++) {
+                otp += Math.trunc(Math.random() * 10);
+            }
+            document.getElementById("otp").textContent = otp;
+        }
+
+        function enterOTP() {
+            var enteredOTP = prompt("Please enter the OTP:");
+            var currentOTP = document.getElementById("otp").textContent;
+
+            if (enteredOTP === currentOTP) {
+                window.open("https://www.youtube.com/watch?v=V2G8ESoDXm8"); 
+            } else {
+                alert("Entered OTP is incorrect. Please try again.");
+            }
+        }
+    </script>
+	
+	<a href="file:///C:/Users/GER%20COSTELO/Downloads/PSHS%20SRC%20SY%2023-24/COMSCI/Q3/cc_compile.html"> Back </a>
+	
+</body>
+</html>
+
+

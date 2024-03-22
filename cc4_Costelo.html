@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Replace All</title>
+    <script>
+        function cchange() {
+          
+            var paragraph = document.getElementById("para");
+            var origText = paragraph.innerText;
+
+            var oldText = prompt("Please enter the text to be replaced :");
+            var newText = prompt("Please enter the new value :");
+
+            var replacedText = origText.replaceAll(oldText, newText);
+
+            var replacedParagraph = document.getElementById("parap");
+            replacedParagraph.innerText = replacedText;
+        }
+    </script>
+</head>
+	<body>
+		<p id="para">original text, feel free to change.</p>
+    <button onclick="cchange()">Replace All</button>
+		<p id="parap">replaced text will appear right here</p>
+		
+		<a href="file:///C:/Users/GER%20COSTELO/Downloads/PSHS%20SRC%20SY%2023-24/COMSCI/Q3/cc_compile.html"> Back </a>
+		
+	</body>
+</html>
